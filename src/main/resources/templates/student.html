@@ -31,11 +31,6 @@
 <form class="row g-3" method="post" action="/student/add" th:object="${s}">
 
     <div class="col-12">
-        <label for="id" class="form-label">id</label>
-        <input type="number" class="form-control" id="id" th:field="*{id}" placeholder="1234">
-    </div>
-
-    <div class="col-12">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" th:field="*{name}"placeholder="richard">
     </div>

@@ -1,7 +1,13 @@
 package com.eswar.testing.entity;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Student {
-    public int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator = "id_generation")
+    @SequenceGenerator(name = "id_generation", sequenceName = "id_generation", allocationSize = 1)
+    private Integer id;
     public String name;
     public String mail;
 
@@ -13,7 +19,11 @@ public class Student {
         this.mail = mail;
     }
 
-    public int getId() {
+    public void setId(Integer id){
+        this.id = id;
+    }
+
+    public Integer getId() {
         return id;
     }
 
@@ -25,9 +35,7 @@ public class Student {
         return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public void setName(String name){
         this.name = name;
